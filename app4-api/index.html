@@ -1,7 +1,15 @@
-<html ng-app="apiApp">
-	<body>
-		
-				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+<html ng-app="app">
+	<body ng-controller="mainCtrl">
+		{{next}}
+		<div ng-repeat="ship in ships">
+			<!--<div>{{ship}}</div>			-->
+			<div style="font-weight: bold">{{ship.name}}</div>
+			<div>{{ship.model}}</div>
+			<div>{{ship.manufacturer}}</div>
+			<hr>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
 		<script src="service.js"></script>

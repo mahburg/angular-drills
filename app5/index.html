@@ -1,9 +1,38 @@
-<html>
-	<body>
-		Something
-				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-		<script src="app.js"></script>
-		<script src="controller.js"></script>
-		<script src="service.js"></script>
-	</body>
+<html ng-app="app">
+<head>
+	<link rel="stylesheet" href="style.css"></link>
+</head>
+<body ng-controller="mainCtrl">
+	<div class="big">
+		
+	<div class="triva_box" ng-if="!done">
+		<div>{{trivia[q].question}}</div>
+		<div><input type="button" value={{trivia[q].correct_answer}} ng-click="guess(trivia[q].correct_answer)"></div>		
+		<div ng-repeat="answer in trivia[q].incorrect_answers">
+			<input type="button" value={{answer}} ng-click="guess(answer)">
+		</div>
+	</div>
+	<div class="message" ng-if="done">
+		GAME OVER <br> {{message}}
+	</div>
+	<hr>
+	<!--{{trivia}}-->
+	<div class="score">
+		<div class="right">
+			{{right}}
+		</div>
+		<div class="wrong">
+			{{wrong}}
+		</div>
+	</div>
+
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+	<script src="app.js"></script>
+	<script src="controller.js"></script>
+	<script src="service.js"></script>
+</body>
+
 </html>

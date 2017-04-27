@@ -6,3 +6,11 @@
 	width: 24%;	
 	display: inline-block;
 }
+.container{
+	display: flex;
+	/*flex-wrap: wrap;*/
+}
+.name{
+	font-weight: bold;
+	margin-top: 20px;
+}
