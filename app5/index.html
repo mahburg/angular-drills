@@ -6,15 +6,14 @@
 	<div class="big">
 		
 		<div class="triva_box" ng-if="!done">
-			<div>{{trivia[q].question}}</div>
+			<div class="question">{{trivia[q].question}}</div>
 			<br>
-			<div><input type="button" value={{trivia[q].correct_answer}} ng-click="guess(trivia[q].correct_answer)"></div>		
-			<div ng-repeat="answer in trivia[q].incorrect_answers">
+			<div class="answers" ng-repeat="answer in trivia[q].incorrect_answers">
 				<input type="button" value={{answer}} ng-click="guess(answer)">
 			</div>
 		</div>
 		<div class="message" ng-if="done">
-			GAME OVER <br> {{message}}
+			GAME OVER <br> {{message}} <br> <input type="button" value="Play again?" ng-click="playAgain()">
 		</div>
 		<hr>
 		<!--{{trivia}}-->

@@ -1,6 +1,19 @@
+body{
+    display: flex;
+    justify-content: center;
+} 
 .big{
     width: 60%;
     margin: 30px;
+}
+.question{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+.answers{
+    display: flex;
+    justify-content: center;
 }
 .message{
     font-size: 50px;
